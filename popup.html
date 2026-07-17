@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Activity Logger</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>🤖 AI Activity Logger <span class="badge" id="interactionCount">0</span></h1>
+  </div>
+  <div class="tab-bar">
+    <div class="tab active" data-tab="logs">📋 Logy</div>
+    <div class="tab" data-tab="stats">📊 Statistiky</div>
+    <div class="tab" data-tab="presets">⚡ Presety</div>
+  </div>
+  <div class="content">
+    <div class="tab-content active" id="logs-tab">
+      <div id="logsContainer"></div>
+      <div class="actions">
+        <button class="btn btn-success" id="exportJson">📥 Export JSON</button>
+        <button class="btn btn-success" id="exportCsv">📥 Export CSV</button>
+        <button class="btn btn-success" id="exportMd">📥 Export MD</button>
+        <button class="btn btn-danger" id="clearLogs">🗑️ Smazat vše</button>
+      </div>
+    </div>
+    <div class="tab-content" id="stats-tab">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="number" id="totalInteractions">0</div><div class="label">Celkem interakcí</div></div>
+        <div class="stat-card"><div class="number" id="totalSessions">0</div><div class="label">Sessions</div></div>
+        <div class="stat-card"><div class="number" id="modelsCount">0</div><div class="label">Použité modely</div></div>
+      </div>
+      <div class="stats-panel">
+        <div class="panel-heading">Modely</div>
+        <div id="modelStats"></div>
+        <div class="panel-heading">Typy interakcí</div>
+        <div id="typeStats"></div>
+      </div>
+    </div>
+    <div class="tab-content" id="presets-tab">
+      <div class="presets-panel">
+        <h3>Připravené dotazy</h3>
+        <div id="presetList"></div>
+        <button class="btn btn-secondary" id="openOptions">Nastavení presetů</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
